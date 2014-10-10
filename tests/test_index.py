@@ -20,3 +20,4 @@ def test_index_multiple(multi_db):
 def test_index_slice(db):
     idx = Index(db, 'k')
     assert [d['k'] for d in idx[1:3]] == [2, 3]
+    assert idx[0] == {'k': 1}
