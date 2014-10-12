@@ -2,7 +2,7 @@ class Index():
     def __init__(self, db, *keys, **kwargs):
         self.db = db
         self.keys = keys
-        self.reverse = kwargs.get('reverse', False)
+        self.reverse = bool(kwargs.get('reverse'))
 
     def can_index(self, datum):
         return all(key in datum for key in self.keys)
