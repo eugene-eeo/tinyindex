@@ -4,12 +4,12 @@ class Index():
         self.keys = keys
         self.reverse = kwargs.get('reverse', False)
 
-    def matches_keys(self, datum):
+    def can_index(self, datum):
         return all(key in datum for key in self.keys)
 
     def all(self):
         for item in self.db.all():
-            if self.matches_keys(item):
+            if self.can_index(item):
                 yield item
 
     @property
