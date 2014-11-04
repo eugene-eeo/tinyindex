@@ -1,6 +1,6 @@
-class Index():
-    def __init__(self, db, *keys, **kwargs):
-        self.db = db
+class Index(object):
+    def __init__(self, table, *keys, **kwargs):
+        self.table = table
         self.keys = keys
         self.reverse = bool(kwargs.get('reverse'))
 
@@ -8,7 +8,7 @@ class Index():
         return all(key in datum for key in self.keys)
 
     def all(self):
-        for item in self.db.all():
+        for item in self.table.all():
             if self.can_index(item):
                 yield item
 

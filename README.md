@@ -3,8 +3,8 @@ tinyindex
 
 Document indexing for TinyDB. Basically ensures
 deterministic (as long as there aren't any changes
-to the table) yielding of documents. Example
-usage:
+to the table) yielding of documents. A very trivial
+example usage:
 
 ```python
 from tinyindex import Index
